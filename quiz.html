@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lifestyle Assessment | Roommate Sync</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="page-quiz">
+    <div class="bg-layer">
+        <div class="orb orb-1 position-alt"></div>
+        <div class="orb orb-3 position-alt-2"></div>
+        <div class="grid-overlay"></div>
+    </div>
+
+    <div class="dashboard-layout">
+        <aside class="sidebar glass-panel">
+            <div class="sidebar-header">
+                <a href="index.html" class="back-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                </a>
+                <span class="sidebar-title">Assessment</span>
+            </div>
+
+            <div class="sidebar-progress">
+                <div class="progress-info">
+                    <span class="step-text">Step <span id="currentStep">1</span> of 4</span>
+                    <span class="percentage-text" id="progressPercent">25%</span>
+                </div>
+                <div class="progress-track">
+                    <div class="progress-fill" id="progressBar"></div>
+                </div>
+            </div>
+
+            <div class="checklist">
+                <div class="check-item active">
+                    <div class="check-circle"></div>
+                    <span>Sleep Habits</span>
+                </div>
+                <div class="check-item">
+                    <div class="check-circle"></div>
+                    <span>Dietary Prefs</span>
+                </div>
+                <div class="check-item">
+                    <div class="check-circle"></div>
+                    <span>Cleanliness</span>
+                </div>
+                <div class="check-item">
+                    <div class="check-circle"></div>
+                    <span>Budgeting</span>
+                </div>
+            </div>
+        </aside>
+
+        <main class="quiz-container">
+            <section class="question-card glass-panel active" id="q1">
+                <div class="q-header">
+                    <span class="q-category">Biological Rhythms</span>
+                    <h2 class="q-title">What is your typical sleep schedule?</h2>
+                    <p class="q-subtitle">We match you with people who are awake when you are to minimize noise complaints.</p>
+                </div>
+
+                <div class="options-grid">
+                    <label class="option-card">
+                        <input type="radio" name="sleep" value="early">
+                        <div class="option-content">
+                            <div class="option-icon">☀️</div>
+                            <h3 class="option-heading">Early Bird</h3>
+                            <p class="option-desc">I wake up before 7 AM and sleep before 11 PM.</p>
+                        </div>
+                    </label>
+
+                    <label class="option-card">
+                        <input type="radio" name="sleep" value="regular">
+                        <div class="option-content">
+                            <div class="option-icon">⏰</div>
+                            <h3 class="option-heading">Standard</h3>
+                            <p class="option-desc">Typical 9-5 schedule. Sleep around midnight.</p>
+                        </div>
+                    </label>
+
+                    <label class="option-card">
+                        <input type="radio" name="sleep" value="late">
+                        <div class="option-content">
+                            <div class="option-icon">🌙</div>
+                            <h3 class="option-heading">Night Owl</h3>
+                            <p class="option-desc">I am most active at night and sleep late.</p>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="quiz-footer">
+                    <button class="btn btn-ghost disabled">Previous</button>
+                    <button class="btn btn-primary" onclick="nextStep(2)">Next Step</button>
+                </div>
+            </section>
+
+            <section class="question-card glass-panel" id="q2">
+                <div class="q-header">
+                    <span class="q-category">Kitchen Dynamics</span>
+                    <h2 class="q-title">What are your dietary preferences?</h2>
+                    <p class="q-subtitle">Avoid kitchen conflict by aligning on smell sensitivity and shared meals.</p>
+                </div>
+
+                <div class="options-grid">
+                    <label class="option-card">
+                        <input type="radio" name="food" value="omni">
+                        <div class="option-content">
+                            <div class="option-icon">🥩</div>
+                            <h3 class="option-heading">Omnivore</h3>
+                            <p class="option-desc">I eat everything. No restrictions in the house.</p>
+                        </div>
+                    </label>
+
+                    <label class="option-card">
+                        <input type="radio" name="food" value="veg">
+                        <div class="option-content">
+                            <div class="option-icon">🥗</div>
+                            <h3 class="option-heading">Vegetarian/Vegan</h3>
+                            <p class="option-desc">I prefer a meat-free cooking environment.</p>
+                        </div>
+                    </label>
+
+                    <label class="option-card">
+                        <input type="radio" name="food" value="strict">
+                        <div class="option-content">
+                            <div class="option-icon">🚫</div>
+                            <h3 class="option-heading">Allergy Free</h3>
+                            <p class="option-desc">Strictly no nuts, gluten, or specific allergens.</p>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="quiz-footer">
+                    <button class="btn btn-ghost" onclick="prevStep(1)">Previous</button>
+                    <button class="btn btn-primary" onclick="nextStep(3)">Next Step</button>
+                </div>
+            </section>
+
+            <section class="question-card glass-panel" id="q3">
+                <div class="q-header">
+                    <span class="q-category">Living Standards</span>
+                    <h2 class="q-title">How would you describe your cleanliness?</h2>
+                    <p class="q-subtitle">Be honest. This is the #1 reason roommate arrangements fail.</p>
+                </div>
+
+                <div class="options-grid">
+                    <label class="option-card">
+                        <input type="radio" name="clean" value="messy">
+                        <div class="option-content">
+                            <div class="option-icon">🎨</div>
+                            <h3 class="option-heading">Creative Chaos</h3>
+                            <p class="option-desc">I clean when it gets bad, but clutter is normal.</p>
+                        </div>
+                    </label>
+
+                    <label class="option-card">
+                        <input type="radio" name="clean" value="average">
+                        <div class="option-content">
+                            <div class="option-icon">🧹</div>
+                            <h3 class="option-heading">Regularly Tidy</h3>
+                            <p class="option-desc">I clean up after myself and do weekly chores.</p>
+                        </div>
+                    </label>
+
+                    <label class="option-card">
+                        <input type="radio" name="clean" value="neat">
+                        <div class="option-content">
+                            <div class="option-icon">✨</div>
+                            <h3 class="option-heading">Spotless</h3>
+                            <p class="option-desc">I cannot relax if there is a dish in the sink.</p>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="quiz-footer">
+                    <button class="btn btn-ghost" onclick="prevStep(2)">Previous</button>
+                    <button class="btn btn-primary" onclick="nextStep(4)">Next Step</button>
+                </div>
+            </section>
+
+            <section class="question-card glass-panel" id="q4">
+                <div class="q-header">
+                    <span class="q-category">Financials</span>
+                    <h2 class="q-title">What is your budget mindset?</h2>
+                    <p class="q-subtitle">Aligning on spending habits prevents arguments over bills and groceries.</p>
+                </div>
+
+                <div class="options-grid">
+                    <label class="option-card">
+                        <input type="radio" name="budget" value="thrifty">
+                        <div class="option-content">
+                            <div class="option-icon">📉</div>
+                            <h3 class="option-heading">Thrifty</h3>
+                            <p class="option-desc">I want to save money. Minimal AC, budget brands.</p>
+                        </div>
+                    </label>
+
+                    <label class="option-card">
+                        <input type="radio" name="budget" value="balanced">
+                        <div class="option-content">
+                            <div class="option-icon">⚖️</div>
+                            <h3 class="option-heading">Balanced</h3>
+                            <p class="option-desc">I'm okay spending on comfort, but within reason.</p>
+                        </div>
+                    </label>
+
+                    <label class="option-card">
+                        <input type="radio" name="budget" value="luxury">
+                        <div class="option-content">
+                            <div class="option-icon">💎</div>
+                            <h3 class="option-heading">Premium</h3>
+                            <p class="option-desc">I prefer convenience and luxury over saving.</p>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="quiz-footer">
+                    <button class="btn btn-ghost" onclick="prevStep(3)">Previous</button>
+                    <button class="btn btn-primary" onclick="window.location.href='result.html'">Analyze Results</button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

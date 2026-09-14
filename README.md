@@ -112,14 +112,12 @@ QUIZ PAGE:- https://drive.google.com/file/d/1_3rF0wiNK8Ro_H071LCbM--x9I02UU1R/vi
 
 RESULT PAGE:-https://drive.google.com/file/d/1J4X8MFIR0K2BnucuJumqqoJ_U6OJb77J/view?usp=sharing
 
-👥 Team – Tech Titans
+👥 Team –CrazzyXyz
 
-Team :
+Team Members :
 
-Samarth Talwar (Team Leader)
+Prasad Khatal (Team Leader)
 
-Nakul
+Parth Wagh (Frontend)
 
-Sampreet
-
-Sudharma
+Shivam Pise (Backend)

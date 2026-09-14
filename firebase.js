@@ -1,19 +1,21 @@
-// Firebase core imports
-impose config (from Shivam)
-const firebaseConfig = {
-  apiKey: "AIzaSyABBlqXZtpYAhdsdCcB96pfQ0_77ASzCeg",
-  authDomain:rt { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-import { getAuth } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
-import { getFirestore } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Fireba "roommate-sync-e8a32.firebaseapp.com",
-  projectId: "roommate-sync-e8a32",
-  storageBucket: "roommate-sync-e8a32.firebasestorage.app",
-  messagingSenderId: "553409019094",
-  appId: "1:553409019094:web:7062426a48cd5c47ad1d77"
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyAiV64hj17ZkEvU1wrZPiWf51pLrbb3aWk",
+  authDomain: "roommate-synce.firebaseapp.com",
+  projectId: "roommate-synce",
+  storageBucket: "roommate-synce.firebasestorage.app",
+  messagingSenderId: "480516409457",
+  appId: "1:480516409457:web:b086252b28f2b35a8573d0",
+  measurementId: "G-3R7DSYPM2L"
 };
 
 // Initialize Firebase
-export const app = initializeApp(firebaseConfig);
-export const auth = getAuth(app);
-export const db = getFirestore(app);
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
